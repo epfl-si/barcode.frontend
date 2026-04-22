@@ -5,16 +5,14 @@ import {fetchConnectedUser} from "./lib/graphql/fetchingTools.ts";
 
 function App() {
   const oidc = useOpenIDConnectContext();
-  let loggedIn = false;
   const [connectedUser, setConnectedUser] = useState<any>({
     groups: [],
     userName: '',
   });
 
   useEffect(() => {
-    if (!loggedIn && oidc.state == StateEnum.LoggedIn) {
+    if (oidc.state == StateEnum.LoggedIn) {
       loadFetch();
-      loggedIn = true;
     }
   }, [oidc.accessToken, oidc.state]);
 
