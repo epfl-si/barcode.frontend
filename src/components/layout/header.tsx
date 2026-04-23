@@ -1,6 +1,4 @@
-export const Header = ({
-
-                       }) => {
+export const Header = ({ user }: { user: any }) => {
 
   return (
     <header role="banner" className="header header-light">
@@ -20,7 +18,7 @@ export const Header = ({
               </g>
             </svg>
             <p className="user-name ml-2 text-sm text-left">
-              Enrico<br />
+              {user?.username || '—'}<br />
               <span className="text-xs">
                 123456
               </span>
