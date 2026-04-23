@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import './App.css'
 import {LoginButton, StateEnum, useOpenIDConnectContext} from "@epfl-si/react-appauth";
 import {fetchConnectedUser} from "./lib/graphql/fetchingTools.ts";
+import {Layout} from "@/components/layout/layout.tsx";
+import {BrowserRouter, Route, Routes} from "react-router";
 
 function App() {
   const oidc = useOpenIDConnectContext();
@@ -37,7 +39,13 @@ function App() {
     return <LoginButton />;
   }
   return (
-<>Connected {connectedUser.username}<LoginButton/></>
+<>Connected {connectedUser.username}<LoginButton/>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Layout />}/>
+    </Routes>
+  </BrowserRouter></>
+
   );
 }
 
