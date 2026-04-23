@@ -14,7 +14,6 @@ export const fetchConnectedUser = async (
 
   console.log(query);
   const result = await doGraphQL(query, {}, address, authToken);
-  debugger
   return {
     status: result.status,
     data: result.data?.connectedUserInfo,
