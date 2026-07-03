@@ -1,4 +1,5 @@
 {
+  "environment": "You are in {{environment}} environment",
   "header": {
     "signIn": "Sign In",
     "signOut": "Sign Out"

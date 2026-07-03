@@ -3,3 +3,12 @@
   color: white;
   font-weight: bold
 }
+
+.environment {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
