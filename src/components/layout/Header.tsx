@@ -1,14 +1,8 @@
-import { CircleUserRound, Menu, X } from "lucide-react";
-import React, { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
+import {CircleUserRound, Menu, X} from "lucide-react";
+import React, {useState} from "react";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 import type {UserType} from "@/lib/types.tsx";
-import { useTranslation } from 'react-i18next';
-import { LanguageSelector } from "@/components/language-selector";
+import {useTranslation} from 'react-i18next';
 
 interface HeaderProps {
   user: UserType | null | undefined;
@@ -77,7 +71,6 @@ export const Header: React.FC<HeaderProps> = ({ user, onLogin, onLogout }) => {
                 {t('header.signIn')}
               </button>
             )}
-            <LanguageSelector />
           </div>
 
           {/* Mobile burger button */}
