@@ -121,7 +121,7 @@ export const BarcodeDetailPage = ({ oidc, connectedUser }: { oidc: State, connec
           </h1>
         </div>
         {details &&<AuditDetails deletedBy={details.deletedBy} createdBy={details.createdBy} createdOn={details.createdOn}
-                                 deletedOn={details.deletedOn} font={"sm"}/>}
+                                 deletedOn={details.deletedOn} visibility={'text'} font={"bold"}/>}
 
         <div className="space-y-4">
         {details && !connectedUser.isReadOnly && (

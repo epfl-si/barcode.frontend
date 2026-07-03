@@ -10,6 +10,7 @@ import {ConfirmationAlert} from "@/components/parts/ConfirmationAlert.tsx";
 import {Undo} from "@/components/parts/Undo.tsx";
 import {handleResponse} from "@/lib/graphql/utils.ts";
 import {env} from "@/lib/env"
+import {AuditDetails} from "@/components/parts/AuditDetails.tsx";
 
 export const Shelf = ({ oidc, shelves, storage, load, setNotification, connectedUser, allowsBoxes, allowsShelves }: {
   oidc: State,
@@ -69,7 +70,8 @@ export const Shelf = ({ oidc, shelves, storage, load, setNotification, connected
               <div className="flex items-center gap-2 py-1">
                 <ShelfIcon color="#ee6b00" />
                 <BarcodeIcon size={16} color="#212121" />
-                <span className={`font-bold ${shelf.deletedBy ? 'line-through opacity-50' : ''} flex-1`}>{shelf.barcode}</span>
+                <AuditDetails deletedBy={shelf.deletedBy} createdBy={shelf.createdBy} createdOn={shelf.createdOn}
+                              deletedOn={shelf.deletedOn} visibility={"tooltip"} title={shelf.barcode} font={'bold'}/>
                 {!connectedUser.isReadOnly &&
                   <div>
                     {shelf.deletedBy ?

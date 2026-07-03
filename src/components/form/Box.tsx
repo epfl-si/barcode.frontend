@@ -7,6 +7,7 @@ import {Undo} from "@/components/parts/Undo.tsx";
 import {QrCode as BarcodeIcon, Archive as BoxIcon, Trash2} from "lucide-react";
 import {handleResponse} from "@/lib/graphql/utils.ts";
 import {env} from "@/lib/env"
+import {AuditDetails} from "@/components/parts/AuditDetails.tsx";
 
 export const Box = ({ oidc, storage, shelf, boxes, load, setNotification, connectedUser }: {
   oidc: State,
@@ -44,7 +45,8 @@ export const Box = ({ oidc, storage, shelf, boxes, load, setNotification, connec
         <div key={box.barcode} className={`flex items-center gap-2 py-1 ${box.deletedBy ? 'bg-red-100 -mx-4 px-4' : ''}`}>
           <BoxIcon color="#007480" />
           <BarcodeIcon size={16} color="#212121" />
-          <span className={`text-sm ${box.deletedBy ? 'line-through opacity-50' : ''} flex-1`}>{box.barcode}</span>
+          <AuditDetails deletedBy={box.deletedBy} createdBy={box.createdBy} createdOn={box.createdOn}
+                        deletedOn={box.deletedOn} visibility={"tooltip"} title={box.barcode} font={"small"} />
           {!connectedUser.isReadOnly ? (box.deletedBy ? (
             <Undo
               undoDeletion={() => undoDeletion(box.barcode)}

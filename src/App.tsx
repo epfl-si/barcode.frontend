@@ -9,6 +9,7 @@ import {BarcodeDetailPage} from "@/components/pages/BarcodeDetailPage.tsx";
 import type {UserType} from "@/lib/types.tsx";
 import {StorageTable} from "@/components/pages/StorageTable.tsx";
 import {env} from "@/lib/env"
+import {TooltipProvider} from "@/components/ui/tooltip.tsx";
 
 function App() {
   const oidc = useOpenIDConnectContext();
@@ -41,17 +42,19 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout user={connectedUser} oidc={oidc} />}>
-            <Route element={<RequireAuth oidc={oidc} />}>
-              <Route path="/" element={<StorageTable oidc={oidc} connectedUser={connectedUser} />} />
-              <Route path="/code/new" element={<BarcodeDetailPage oidc={oidc} connectedUser={connectedUser} />} />
-              <Route path="/code/:barcode" element={<BarcodeDetailPage oidc={oidc} connectedUser={connectedUser} />} />
+      <TooltipProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<Layout user={connectedUser} oidc={oidc} />}>
+              <Route element={<RequireAuth oidc={oidc} />}>
+                <Route path="/" element={<StorageTable oidc={oidc} connectedUser={connectedUser} />} />
+                <Route path="/code/new" element={<BarcodeDetailPage oidc={oidc} connectedUser={connectedUser} />} />
+                <Route path="/code/:barcode" element={<BarcodeDetailPage oidc={oidc} connectedUser={connectedUser} />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
     </>
   );
 }
