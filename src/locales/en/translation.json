@@ -1,5 +1,8 @@
 {
   "environment": "You are in {{environment}} environment",
+  "loading": "Loading...",
+  "access_error": "Restricted acess",
+  "access_error_msg": "You must be logged in to view this page.",
   "header": {
     "signIn": "Sign In",
     "signOut": "Sign Out"

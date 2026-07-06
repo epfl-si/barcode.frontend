@@ -1,5 +1,8 @@
 {
   "environment": "Vous êtes dans l'environnement de {{environment}}",
+  "loading": "Chargement...",
+  "access_error": "Accès restreint",
+  "access_error_msg": "Vous devez être connecté pour voir cette page.",
   "header": {
     "signIn": "Se connecter",
     "signOut": "se déconnecter"
