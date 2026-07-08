@@ -78,8 +78,8 @@
     "ARMRE": "Armoire",
     "GLVBX": "boîte à gants",
     "FREEZ": "Congélateur",
-    "EXLOC": "Local extérieur",
-    "INLOC": "Local intérieur",
+    "EXLOC": "Stockage extérieur",
+    "INLOC": "Dans la pièce",
     "SHLVG": "Rayonnage",
     "FRDGE": "Réfrigérateur",
     "OTHER": "Autre"

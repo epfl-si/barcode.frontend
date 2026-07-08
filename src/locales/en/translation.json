@@ -78,8 +78,8 @@
     "ARMRE": "Cabinet",
     "GLVBX": "Glove box",
     "FREEZ": "Freezer",
-    "EXLOC": "Outdoor room",
-    "INLOC": "Indoor room",
+    "EXLOC": "Outdoor storage",
+    "INLOC": "In the room",
     "SHLVG": "Shelving",
     "FRDGE": "Fridge",
     "OTHER": "Other"
