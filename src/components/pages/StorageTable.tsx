@@ -107,6 +107,13 @@ const handleCsvDownload = async () => {
       {
         page: 1,
         pageSize: totalCount,
+        sortField: sortConfig?.key,
+        sortDirection: sortConfig?.direction,
+        roomTypeSymbol: activeFilters.roomType,
+        productTypeSymbol: activeFilters.productType,
+        storageTypeSymbol: activeFilters.storageType,
+        storageSubTypeSymbol: activeFilters.storageSubType,
+        searchTerm: activeFilters.searchTerm,
       }
     );
 
