@@ -61,7 +61,8 @@
     "deletedBy": "Deleted by",
     "onDate": "on",
     "createdOn": "Created on",
-    "deletedOn": "Deleted on"
+    "deletedOn": "Deleted on",
+    "infoSavingDetails": "All changes are processed overnight, and an email is sent with the result of the process."
   },
   "roomType": {
     "LABO":  "Laboratory",

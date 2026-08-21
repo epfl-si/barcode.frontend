@@ -61,7 +61,8 @@
     "deletedBy": "Supprimé par",
     "onDate": "le",
     "createdOn": "Créé le",
-    "deletedOn": "Supprimé le"
+    "deletedOn": "Supprimé le",
+    "infoSavingDetails": "Toutes les modifications sont traitées pendant la nuit et un email est envoyé avec le résultat du traitement."
   },
   "roomType": {
     "LABO":  "Laboratoire",

@@ -111,6 +111,11 @@ export const BarcodeDetailPage = ({ oidc, connectedUser }: { oidc: State, connec
           </Link>
         </Button>
 
+        <div className="gap-2 flex flex-row align-middle mb-5 border-gray-200 border-1 p-2">
+          <Info className="text-blue-500"/>
+          {t("app.infoSavingDetails")}
+        </div>
+
         <div className={`flex items-center gap-3 mb-6 ${details?.deletedBy ? 'line-through opacity-50' : ''}`}>
           <div className="bg-[#f0f0f0] rounded-[12px] h-10 w-10 flex items-center justify-center">
             <ShelvingUnit size={24} />
