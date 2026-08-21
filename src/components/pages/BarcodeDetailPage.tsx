@@ -135,7 +135,7 @@ export const BarcodeDetailPage = ({ oidc, connectedUser }: { oidc: State, connec
               <Trash2 />
               {t('app.deleteStorage')}
             </Button>
-            {details?.deletedBy && (
+            {details?.deletedBy && connectedUser.isAdmin && (
               <>
                 <p className="text-red-500 text-sm font-medium">{t("app.storageDeleted")}</p>
                 <Undo title={t("app.storageDeleted")} undoDeletion={undoDeletion} isIcon={true} />
