@@ -75,19 +75,19 @@ export const Shelf = ({ oidc, shelves, storage, load, setNotification, connected
                 {!connectedUser.isReadOnly &&
                   <div>
                     {shelf.deletedBy ?
-                      <Undo
+                      (connectedUser.isAdmin ? <Undo
                         undoDeletion={() => undoDeletion(shelf.barcode)}
                         isIcon={true}
                         title={t("app.shelfDeleted")}
-                        disabled={disabled}/>
-                    : disabled ?
+                        disabled={disabled}/> : <></>)
+                    : (disabled ?
                       <Trash2 className="text-gray-400" />
                       : <ConfirmationAlert
                           title={t("app.deleteShelfTitle")}
                           description={t("app.deleteShelfDescription", {barcode: shelf.barcode})}
                           actionLabel={t("app.delete")}
                           onSubmit={() => onDeleteShelf(shelf.barcode)}
-                          tooltip={t("app.deleteShelf")}/>
+                          tooltip={t("app.deleteShelf")}/>)
                     }
                 </div>
                 }

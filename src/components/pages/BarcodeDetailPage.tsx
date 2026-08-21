@@ -1,6 +1,6 @@
 import {Link, useParams} from "react-router";
 import {useEffect, useState} from "react";
-import {ArrowLeft, QrCode as BarcodeIcon, ShelvingUnit, Trash2} from "lucide-react";
+import {ArrowLeft, QrCode as BarcodeIcon, Info, ShelvingUnit, Trash2} from "lucide-react";
 import type {State} from "@epfl-si/react-appauth";
 import {useTranslation} from 'react-i18next';
 import {Details} from "@/components/form/Details.tsx";

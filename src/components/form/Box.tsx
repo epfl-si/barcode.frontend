@@ -48,23 +48,22 @@ export const Box = ({ oidc, storage, shelf, boxes, load, setNotification, connec
           <AuditDetails deletedBy={box.deletedBy} createdBy={box.createdBy} createdOn={box.createdOn}
                         deletedOn={box.deletedOn} visibility={"tooltip"} title={box.barcode} font={"small"} />
           {!connectedUser.isReadOnly ? (box.deletedBy ? (
-            <Undo
+              connectedUser.isAdmin ? <Undo
               undoDeletion={() => undoDeletion(box.barcode)}
               isIcon={true}
               title={t("app.boxDeleted")}
               disabled={disabled}
-            />
-          ) : disabled ? (
-            <Trash2 className="text-gray-400" />
-          ) : (
+            /> : <></>
+          ) : (disabled ?
+            <Trash2 className="text-gray-400" /> :
             <ConfirmationAlert
               title={t("app.deleteBoxTitle")}
               description={t("app.deleteBoxDescription", { barcode: box.barcode })}
               actionLabel={t("app.delete")}
               onSubmit={() => onDeleteBox(box.barcode)}
               tooltip={t("app.deleteBox")}
-            />
-          )) : ''}
+            />)
+          ) : ''}
         </div>
       ))}
     </div>
