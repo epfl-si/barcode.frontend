@@ -13,7 +13,7 @@ export const AuditDetails = ({ createdBy, createdOn, deletedBy, deletedOn, visib
   const { t } = useTranslation();
 
   function getAuditDiv() {
-    return <div style={{display: 'flex', flexDirection: 'column'}} className={`mt-2 mb-6 ${visibility === 'text' ? 'text-sm text-gray-500' : 'text-xs text-white'}`}>
+    return <div style={{display: 'flex', flexDirection: 'column'}} className={`mt-2 mb-6 ${visibility === 'text' ? 'text-sm text-gray-500' : 'text-xs text-gray-500'}`}>
       {t('app.createdBy')} {createdBy} {t('app.onDate')} {new Date(createdOn).toLocaleDateString('fr-CH')}
       {deletedBy && deletedOn &&
         <span className="text-red-500 font-medium">

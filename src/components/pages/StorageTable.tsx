@@ -20,6 +20,7 @@ import {handleResponse} from "@/lib/graphql/utils.ts";
 import {MessageAlert} from "@/components/parts/MessageAlert.tsx";
 import {ExportCsvButton} from "@/components/parts/exportCSVButton";
 import {env} from "@/lib/env"
+import {AuditDetails} from "@/components/parts/AuditDetails.tsx";
 
 type SortKey = keyof StorageType;
 
@@ -225,9 +226,13 @@ const handleCsvDownload = async () => {
                       <TableCell className={`${storage.deletedBy ? 'line-through' : ''}`}>
                         {storage.shelves?.map((shelf) => (
                           <div className={`${storage.deletedBy ? '' : shelf.deletedBy ? 'line-through bg-red-100' : ''}`} key={shelf.barcode}>
-                            {shelf.barcode}
+                            <AuditDetails deletedBy={shelf.deletedBy} createdBy={shelf.createdBy} createdOn={shelf.createdOn}
+                                          deletedOn={shelf.deletedOn} visibility={"tooltip"} title={shelf.barcode} font={'small'}/>
                             {shelf.boxes?.map((box) => (
-                              <div className={`${storage.deletedBy ? '' : box.deletedBy ? 'line-through bg-red-100' : ''}`} key={box.barcode}>{box.barcode}</div>
+                              <div className={`${storage.deletedBy ? '' : box.deletedBy ? 'line-through bg-red-100' : ''}`} key={box.barcode}>
+                                <AuditDetails deletedBy={box.deletedBy} createdBy={box.createdBy} createdOn={box.createdOn}
+                                              deletedOn={box.deletedOn} visibility={"tooltip"} title={box.barcode} font={"small"} />
+                              </div>
                             ))}
                           </div>
                         ))}
