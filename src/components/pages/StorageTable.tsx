@@ -34,7 +34,7 @@ export const StorageTable = ({ oidc, connectedUser }: { oidc: State, connectedUs
 
   const [searchParams] = useSearchParams();
   const [totalCount, setTotalCount] = useState<number>(0);
-  const itemsPerPage = 10;
+  const itemsPerPage = 50;
   const [currentPage, setCurrentPage] = useState(parseInt(searchParams.get("page") || "1", 10));
   const [activeFilters, setActiveFilters] = useState<ActiveFilters>({
     roomType: "",

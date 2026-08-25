@@ -18,10 +18,11 @@ export const Layout = ({ user, oidc }: { user: UserType, oidc: State }) => {
         {env().ENVIRONMENT !== 'prod' && <div className="environment">
           {t('environment', { environment: env().ENVIRONMENT ?? 'LOCAL' })}</div>}
 
-        <div className="gap-2 flex flex-row mb-5 border-gray-200 border-1 p-2 font-bold justify-center items-center" style={{ color: "#4a90e2", fontSize: "large" }}>
-          <Info style={{ width: "40px", height: "40px", color: "#4a90e2" }}/>
+        {user.username && <div className="gap-2 flex flex-row mb-5 border-gray-200 border-1 p-2 font-bold justify-center items-center"
+              style={{color: "#4a90e2", fontSize: "large"}}>
+          <Info style={{width: "40px", height: "40px", color: "#4a90e2"}}/>
           {t("app.infoSavingDetails")}
-        </div>
+        </div>}
 
         <Outlet />
       </div>
